@@ -29,10 +29,10 @@ class ClientApp:
 
     @app.route('/predict', methods=['POST'])
     @cross_origin()
-    def predict_route(self):
+    def predict_route():
         image = request.json['image']
-        decode_image(image, self.filename)
-        result = self.classifier.predict()
+        decode_image(image, c1App.filename)
+        result = c1App.classifier.predict()
         return jsonify(result)
 
 if __name__ == '__main__':
